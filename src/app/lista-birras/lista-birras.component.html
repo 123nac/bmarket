@@ -1,0 +1,10 @@
+<mat-selection-list #birra>
+    <mat-list-option *ngFor="let birra of tiposDeBirras">
+        <img matListAvatar src="../../assets/carta_berlina_patagonia_golden_ale_2019_avatar.jpg" alt="...">
+        <h3 matLine>{{birra}}</h3>
+    </mat-list-option>
+</mat-selection-list>
+      
+<p>
+Options selected: {{birra.selectedOptions.selected.length}}
+</p>
