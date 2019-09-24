@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Birra } from '../clases/birra';
 
 @Component({
   selector: 'app-lista-birras',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lista-birras.component.scss']
 })
 export class ListaBirrasComponent implements OnInit {
-  public birras = [ {
+  public birras: Birra[] = [ {
     nombre: 'Golden ALE',
     estilo: 'ALE',
     precio: 100,
