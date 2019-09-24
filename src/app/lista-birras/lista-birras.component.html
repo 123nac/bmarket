@@ -1,10 +1,12 @@
-<mat-selection-list #birra>
-    <mat-list-option *ngFor="let birra of tiposDeBirras">
-        <img matListAvatar src="../../assets/carta_berlina_patagonia_golden_ale_2019_avatar.jpg" alt="...">
-        <h3 matLine>{{birra}}</h3>
-    </mat-list-option>
-</mat-selection-list>
-      
-<p>
-Options selected: {{birra.selectedOptions.selected.length}}
-</p>
+<mat-nav-list #birra>
+    <h3 matSubheader>Todas las Birras</h3>
+    <a mat-list-item *ngFor="let birra of birras">
+        <img matListAvatar [src]="birra.avatar" alt="birra.name">
+        <h3 matLine>{{birra.nombre}}</h3>
+        <p matLine>Estilo: {{birra.estilo}}</p>
+        <span class="precio">{{birra.precio}}</span>
+        <mat-icon *ngIf="birra.stock > 0" aria-hidden="false" color="primary">check</mat-icon>
+        <mat-icon *ngIf="birra.stock == 0" aria-hidden="false" color="alert">close</mat-icon>
+    </a>
+</mat-nav-list>
+

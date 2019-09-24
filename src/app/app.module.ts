@@ -14,13 +14,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ListaBirrasComponent } from './lista-birras/lista-birras.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSliderModule } from '@angular/material/slider';
+import { CantSliderComponent } from './cant-slider/cant-slider.component';
+import { MatTableModule } from '@angular/material/table';
+import { TablaCarritoComponent } from './tabla-carrito/tabla-carrito.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavegacionComponent,
     PestaniasComponent,
-    ListaBirrasComponent
+    ListaBirrasComponent,
+    CantSliderComponent,
+    TablaCarritoComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +40,10 @@ import { ListaBirrasComponent } from './lista-birras/lista-birras.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatTabsModule
+    MatTabsModule,
+    MatExpansionModule,
+    MatSliderModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
