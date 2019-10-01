@@ -1,12 +1,12 @@
-<mat-nav-list #birra>
+<mat-action-list #birra>
     <h3 matSubheader>Todas las Birras</h3>
-    <a mat-list-item *ngFor="let birra of birras">
-        <img matListAvatar [src]="birra.avatar" alt="birra.name">
-        <h3 matLine>{{birra.nombre}}</h3>
-        <p matLine>Estilo: {{birra.estilo}}</p>
-        <span class="precio">{{birra.precio | currency }}</span>
-        <mat-icon *ngIf="birra.stock > 0" aria-hidden="false" color="primary">check</mat-icon>
-        <mat-icon *ngIf="birra.stock == 0" aria-hidden="false" color="warn">close</mat-icon>
-    </a>
-</mat-nav-list>
+    <button mat-list-item *ngFor="let birra of birras" (click)="masInfo(birra)">
+            <img matListAvatar [src]="birra.avatar" alt="birra.name">
+            <h3 matLine>{{birra.nombre}}</h3>
+            <p matLine>Estilo: {{birra.estilo}}</p>
+            <span class="precio">{{birra.precio | currency}}</span>
+            <mat-icon *ngIf="birra.stock > 0" aria-hidden="false" color="primary">check</mat-icon>
+            <mat-icon *ngIf="birra.stock == 0" aria-hidden="false" color="warn">close</mat-icon>
+    </button>
+</mat-action-list>
 

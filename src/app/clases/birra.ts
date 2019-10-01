@@ -5,6 +5,7 @@ export class Birra {
     public precio: number;
     public avatar: string;
     public stock: number;
+    public oferta: boolean;
 
     constructor(parameters) {
         

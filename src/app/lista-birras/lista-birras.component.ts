@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Birra } from '../clases/birra';
+import { BIRRAS } from "../mocks/mocks";
 
 @Component({
   selector: 'app-lista-birras',
@@ -7,41 +8,14 @@ import { Birra } from '../clases/birra';
   styleUrls: ['./lista-birras.component.scss']
 })
 export class ListaBirrasComponent implements OnInit {
-  public birras: Birra[] = [ {
-    nombre: 'Golden ALE',
-    estilo: 'ALE',
-    precio: 100,
-    avatar: "../../assets/carta_berlina_patagonia_golden_ale_2019_avatar.jpg",
-    stock: 20,
-  }, {
-    nombre: 'IPA',
-    estilo: 'IPA',
-    precio: 100,
-    avatar: "../../assets/carta_berlina_patagonia_golden_ale_2019_avatar.jpg",
-    stock: 20,
-  },{
-    nombre: 'Foreing STOUT',
-    estilo: 'STOUT',
-    precio: 100,
-    avatar: "../../assets/carta_berlina_patagonia_golden_ale_2019_avatar.jpg",
-    stock: 20,
-  }, {
-    nombre: 'Colonia Suiza',
-    estilo: 'Estilo',
-    precio: 100,
-    avatar: "../../assets/carta_berlina_patagonia_golden_ale_2019_avatar.jpg",
-    stock: 0,
-  } , {
-    nombre: 'Ninas Pumpkin ALE',
-    estilo: 'ALE',
-    precio: 100,
-    avatar: "../../assets/carta_berlina_patagonia_golden_ale_2019_avatar.jpg",
-    stock: 20,
-  }];
+  public birras: Birra[];
 
-  constructor() { }
+  
+  constructor() { 
+  }
 
   ngOnInit() {
+    this.birras = BIRRAS;
   }
 
 }
