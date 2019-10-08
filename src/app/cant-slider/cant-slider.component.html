@@ -3,4 +3,6 @@
   [displayWith]="formatLabel"
   tickInterval="1"
   min="0"
-  max="9"></mat-slider>
+  [max]="maxSlider"
+  [disabled]="1 > maxSlider">
+</mat-slider>

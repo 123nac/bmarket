@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-cant-slider',
@@ -8,15 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class CantSliderComponent implements OnInit {
   formatLabel(value: number | null) {
     if (!value) {
-      return 0 + '🙁';
+      return 0;
     }
 
     if (value >= 1) {
-      return value  + '🍻';
+      return value ;
     }
 
     return value;
   }
+  @Input() maxSlider: number = 0;
+
   constructor() { }
 
   ngOnInit() {

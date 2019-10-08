@@ -13,7 +13,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { ListaBirrasComponent } from './lista-birras/lista-birras.component';
+import { PanelBirraComponent } from './panel-birra/panel-birra.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSliderModule } from '@angular/material/slider';
 import { CantSliderComponent } from './cant-slider/cant-slider.component';
@@ -21,14 +23,16 @@ import { MatTableModule } from '@angular/material/table';
 import { TablaCarritoComponent } from './tabla-carrito/tabla-carrito.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavegacionComponent,
     PestaniasComponent,
+    PanelBirraComponent,
     ListaBirrasComponent,
     CantSliderComponent,
-    TablaCarritoComponent
+    TablaCarritoComponent,  
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,11 @@ import { TablaCarritoComponent } from './tabla-carrito/tabla-carrito.component';
     MatTabsModule,
     MatExpansionModule,
     MatSliderModule,
-    MatTableModule
+    MatTableModule,
+    MatBottomSheetModule,
+  ],
+  entryComponents: [
+    PanelBirraComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
