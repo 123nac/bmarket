@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { MatSliderChange } from '@angular/material/slider';
 
 @Component({
   selector: 'app-cant-slider',
@@ -12,14 +13,24 @@ export class CantSliderComponent implements OnInit {
     }
 
     if (value >= 1) {
-      return value ;
+      return value;
     }
 
     return value;
   }
   @Input() maxSlider: number = 0;
+  
+  public cantidad : number;
 
-  constructor() { }
+  @Output()
+  cambio(event: MatSliderChange) {
+    this.cantidad = event.value;
+    console.log(this.cantidad);
+  }
+
+  constructor() {
+    this.cantidad = 0;
+  }
 
   ngOnInit() {
   }

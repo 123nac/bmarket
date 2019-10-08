@@ -4,5 +4,7 @@
   tickInterval="1"
   min="0"
   [max]="maxSlider"
-  [disabled]="1 > maxSlider">
+  [disabled]="1 > maxSlider"
+  (change)="cambio($event)"
+  >
 </mat-slider>

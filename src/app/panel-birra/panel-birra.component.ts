@@ -12,6 +12,7 @@ export class PanelBirraComponent {
 
   public birra : Birra;
 
+
   constructor(private _bottomSheetRef: MatBottomSheetRef<PanelBirraComponent>,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: any) {
       this.birra = data.birra;
@@ -21,4 +22,5 @@ export class PanelBirraComponent {
     this._bottomSheetRef.dismiss();
     event.preventDefault();
   }
+
 }
