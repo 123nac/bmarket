@@ -21,6 +21,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { CantSliderComponent } from './cant-slider/cant-slider.component';
 import { MatTableModule } from '@angular/material/table';
 import { TablaCarritoComponent } from './tabla-carrito/tabla-carrito.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 
@@ -32,7 +33,7 @@ import { TablaCarritoComponent } from './tabla-carrito/tabla-carrito.component';
     PanelBirraComponent,
     ListaBirrasComponent,
     CantSliderComponent,
-    TablaCarritoComponent,  
+    TablaCarritoComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +50,7 @@ import { TablaCarritoComponent } from './tabla-carrito/tabla-carrito.component';
     MatSliderModule,
     MatTableModule,
     MatBottomSheetModule,
+    MatDividerModule
   ],
   entryComponents: [
     PanelBirraComponent
