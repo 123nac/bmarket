@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MatSliderChange } from '@angular/material/slider';
+
 
 @Component({
   selector: 'app-cant-slider',
@@ -20,16 +21,14 @@ export class CantSliderComponent implements OnInit {
   }
   @Input() maxSlider: number = 0;
   
-  public cantidad : number;
+  @Output() cantidad = new EventEmitter<number>();
 
-  @Output()
-  cambio(event: MatSliderChange) {
-    this.cantidad = event.value;
-    console.log(this.cantidad);
+  cambio(event: any) {
+    this.cantidad.emit(event.value);
+    // console.log(event.value);
   }
 
   constructor() {
-    this.cantidad = 0;
   }
 
   ngOnInit() {

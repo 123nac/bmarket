@@ -1,5 +1,4 @@
 <h2>{{birra.nombre}}</h2>
-<mat-divider></mat-divider>
 <div class="row">
     <img [src]="birra.avatar" alt="">
     <mat-list>
@@ -7,7 +6,8 @@
         <mat-list-item> Precio: {{birra.precio}} </mat-list-item>
     </mat-list>
 </div>
-
 <br>
-<app-cant-slider [maxSlider]="birra.stock"></app-cant-slider>
-<button mat-raised-button color="accent">Comprar</button>
+<mat-divider></mat-divider>
+<br>
+<app-cant-slider [maxSlider]="birra.stock" (cantidad)="actualizarCantidad($event)"></app-cant-slider>
+<button mat-raised-button color="accent">Comprar {{cantidad}}</button>

@@ -1,10 +1,9 @@
 <mat-slider
   thumbLabel
   [displayWith]="formatLabel"
-  tickInterval="1"
   min="0"
   [max]="maxSlider"
-  [disabled]="1 > maxSlider"
+  [disabled]="maxSlider < 1"
   (change)="cambio($event)"
   >
 </mat-slider>

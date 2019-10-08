@@ -12,11 +12,17 @@ export class PanelBirraComponent {
 
   public birra : Birra;
 
+  cantidad : number = 0;
 
   constructor(private _bottomSheetRef: MatBottomSheetRef<PanelBirraComponent>,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: any) {
       this.birra = data.birra;
     }
+  
+  actualizarCantidad(cant : number){
+    this.cantidad = cant;
+    // console.log(cant);
+  }
   
   openLink(event: MouseEvent): void {
     this._bottomSheetRef.dismiss();
