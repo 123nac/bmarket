@@ -2,7 +2,7 @@
     <h3 matSubheader>Todas las Birras</h3>
     <button mat-list-item *ngFor="let birra of birras" (click)="abrirPanel(birra)">
             <img matListAvatar [src]="birra.avatar" alt="birra.name">
-            <h3 matLine>{{birra.nombre}}</h3>
+            <h3 matLine>{{birra.name}}</h3>
             <p matLine>Estilo: {{birra.estilo}}</p>
             <span class="precio">{{birra.precio | currency}}</span>
             <mat-icon *ngIf="birra.stock > 0" aria-hidden="false" color="primary">check</mat-icon>

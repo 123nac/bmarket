@@ -7,7 +7,4 @@ export class Birra {
     public stock: number;
     public oferta: boolean;
 
-    constructor(parameters) {
-        
-    }
 }

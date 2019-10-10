@@ -1,13 +1,28 @@
-<h2>{{birra.nombre}}</h2>
+<div class="row">
+    <h2>{{birra.nombre}}</h2>
+    <mat-chip-list>
+        <mat-chip color="accent" disabled>{{birra.estilo}}</mat-chip>
+        <mat-chip *ngIf="birra.stock == 0" color="accent" disabled>Sin Stock</mat-chip>
+    </mat-chip-list>
+</div>
 <div class="row">
     <img [src]="birra.avatar" alt="">
     <mat-list>
-        <mat-list-item> Estilo: {{birra.estilo}} </mat-list-item>
-        <mat-list-item> Precio: {{birra.precio}} </mat-list-item>
+        <mat-list-item> Descripción: Buenísimo </mat-list-item>
+        <mat-list-item> Precio: {{birra.precio | currency}} </mat-list-item>
     </mat-list>
 </div>
 <br>
 <mat-divider></mat-divider>
 <br>
-<app-cant-slider [maxSlider]="birra.stock" (cantidad)="actualizarCantidad($event)"></app-cant-slider>
-<button mat-raised-button color="accent">Comprar {{cantidad}}</button>
+<app-cant-slider 
+    [maxSlider]="birra.stock" 
+    (cantidad)="actualizarCantidad($event)">
+</app-cant-slider>
+<button 
+    mat-raised-button 
+    color="accent" 
+    [disabled]="cantidad < 1"
+    >
+    Comprar {{cantidad}}
+</button>

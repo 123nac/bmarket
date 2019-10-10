@@ -12,11 +12,12 @@ export class PanelBirraComponent {
 
   public birra : Birra;
 
-  cantidad : number = 0;
+  cantidad : number;
 
   constructor(private _bottomSheetRef: MatBottomSheetRef<PanelBirraComponent>,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: any) {
       this.birra = data.birra;
+      this.cantidad  = this.birra.stock;
     }
   
   actualizarCantidad(cant : number){

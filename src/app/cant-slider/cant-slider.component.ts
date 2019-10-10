@@ -23,7 +23,7 @@ export class CantSliderComponent implements OnInit {
   
   @Output() cantidad = new EventEmitter<number>();
 
-  cambio(event: any) {
+  cambio(event: MatSliderChange) {
     this.cantidad.emit(event.value);
     // console.log(event.value);
   }

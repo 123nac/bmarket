@@ -22,6 +22,10 @@ import { CantSliderComponent } from './cant-slider/cant-slider.component';
 import { MatTableModule } from '@angular/material/table';
 import { TablaCarritoComponent } from './tabla-carrito/tabla-carrito.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { AboutComponent } from './about/about.component';
+import { BirraDataService } from './servicios/birra-data.service';
+import { MatChipsModule } from '@angular/material/chips';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -33,7 +37,8 @@ import { MatDividerModule } from '@angular/material/divider';
     PanelBirraComponent,
     ListaBirrasComponent,
     CantSliderComponent,
-    TablaCarritoComponent
+    TablaCarritoComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -50,12 +55,14 @@ import { MatDividerModule } from '@angular/material/divider';
     MatSliderModule,
     MatTableModule,
     MatBottomSheetModule,
-    MatDividerModule
+    MatDividerModule,
+    MatChipsModule,
+    HttpClientModule
   ],
   entryComponents: [
     PanelBirraComponent
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ BirraDataService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
