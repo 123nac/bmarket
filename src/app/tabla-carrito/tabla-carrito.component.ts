@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CarritoService } from '../servicios/carrito.service';
 
-export interface Transaction {
-  item: string;
-  cost: number;
-}
+
 
 @Component({
   selector: 'app-tabla-carrito',
@@ -11,23 +9,35 @@ export interface Transaction {
   styleUrls: ['./tabla-carrito.component.scss']
 })
 export class TablaCarritoComponent implements OnInit {
-  displayedColumns: string[] = ['item', 'cost'];
-  transactions: Transaction[] = [
-    {item: 'Beach ball', cost: 4},
-    {item: 'Towel', cost: 5},
-    {item: 'Frisbee', cost: 2},
-    {item: 'Sunscreen', cost: 4},
-    {item: 'Cooler', cost: 25},
-    {item: 'Swim suit', cost: 15},
-  ];
+  displayedColumns: string[] = ['nombre', 'cantidad', 'monto'];
+  transactions: any[] = [];
+
 
   /** Gets the total cost of all transactions. */
-  getTotalCost() {
-    return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+  getMontoTotal() {
+    // return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+    let total = 0;
+    this.transactions.forEach(t => {
+      total += t.monto;
+    });
+    return total;
   }
-  constructor() { }
+  getCantidadTotal() {
+    // return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+    let total = 0;
+    this.transactions.forEach(t => {
+      total += t.cantidad;
+    });
+    return total;
+  }
+
+  constructor(private carrito_service : CarritoService) { }
 
   ngOnInit() {
+
+    this.carrito_service.obtenerCarrito().subscribe(items => {
+      this.transactions = items;
+    });
   }
 
 }

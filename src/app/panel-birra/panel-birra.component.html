@@ -23,6 +23,7 @@
     mat-raised-button 
     color="accent" 
     [disabled]="cantidad < 1"
+    (click)="agregarCarrito()"
     >
     Comprar {{cantidad}}
 </button>
